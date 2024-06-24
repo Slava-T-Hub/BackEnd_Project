@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- *****************************css*** -->
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/community.css" />
+    <!-- *****************************fonts*** -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
+    <title>Community</title>
+  </head>
+  <body>
+    <!-- *****************************VideoConteiner*** -->
+
+    <div class="videoConteiner">
+      <video autoplay muted loop>
+        <source src="video/Community.mp4" type="video/mp4" />
+        Your browser does not support video
+      </video>
+    </div>
+    <!-- *****************************siteConteiner*** -->
+    <div id="siteConteiner">
+      <!-- *****************************burger & nav bar*** -->
+      <header id="header">
+        <div class="burger">
+          <span></span>
+        </div>
+        <!-- ******************************** -->
+        <div class="logo"><img src="img/logo/logo_sW.png" alt="Logo" /></div>
+        <nav id="navMenu">
+          <a class="button" href="index.html">Home</a>
+          <a class="button" href="#">Community</a>
+
+          <select id="language">
+            <option id="english" style="color: black">English</option>
+            <option id="hebrew" style="color: black">Hebrew</option>
+          </select>
+        </nav>
+        <a href="account.html" id="account"><img src="img/Account.png" alt="AccountImg" />Account</a>
+      </header>
+      <!-- *****************************socialbar*** -->
+      <div class="social">
+        <h4 class="flipTexst">Follow us</h4>
+        <a class="button" href="https://www.facebook.com/" target="_blank"><img src="img/social/facebook.png" alt="facebook" /></a>
+        <a class="button" href="https://web.telegram.org/" target="_blank"><img src="img/social/telegram.png" alt="telegram" /></a>
+        <a class="button" href="https://www.youtube.com/" target="_blank"><img src="img/social/youtube.png" alt="YouTube" /></a>
+      </div>
+      <!-- *****************************scrollBar*** -->
+      <div id="progressBarContainer">
+        <div id="progressBar"></div>
+      </div>
+      <!-- *******************************Community* -->
+      <div id="communitySection">
+        <div class="headerDiv">
+          <h2>
+            Welcome to <br />
+            Community
+          </h2>
+          <a href="#brDiv" class="scrollDown">scroll down <img src="img/scroll down.png" alt="hetz" /></a>
+        </div>
+      </div>
+      <!-- *******************************Community* -->
+      <div id="brDiv"></div>
+      <div id="chatCection">
+        <div class="welcome">
+          <p class="welcomeP">
+            Dear travelers,
+            <br />
+            <br />
+            Welcome to the pages of our exciting community, Hidden Travels! We gather here all those who share a love for adventure, discovery, and new horizons.
+            <br />
+            <br />
+            Our mission is to inspire you to travel and to share valuable tips, unique places, and interesting stories. We believe that there is something special in every corner of the world, and our goal is to help you uncover these unexplored gems.
+            <br />
+            <br />
+            Feel free to share your experiences, ask questions, and contribute to our community. Together, we create a unique space for everyone seeking new adventures and friends around the globe. Travels that will be truly unique will be included in the list of the site.
+            <br />
+            <br />
+            Stay open to new opportunities, sincerely marvel at the beauty of the world, and remember that the most exciting things are always just beyond the map.
+
+            <br />
+            <br />
+            Administrator, Hidden Travels
+            <br />
+            <br />
+            <br />
+            <br />
+          </p>
+          <!-- ************************chatform* -->
+
+          <form action="" id="chatForm">
+            <!-- ************************* -->
+
+            <label for="">Tell us about your journey!</label>
+            <!-- ************************* -->
+
+            <div class="accountNameEmail">
+              <input type="text" name="" id="nameCommunity" placeholder="   Name" />
+              <input type="email" name="" id="emailCommunity" placeholder="   Email" />
+            </div>
+            <!-- ************************filter* -->
+            <div class="filter">
+              <select name="" id="region" onchange="regionChoise()">
+                <option value="" style="color: black" disabled selected hidden>Region</option>
+                <option value="Africa" id="africa" style="color: black">Africa</option>
+                <option value="Asia" id="asia" style="color: black">Asia</option>
+                <option value="Europe" id="europe" style="color: black">Europe</option>
+                <option value="Americas" id="northAmerica" style="color: black">Americas</option>
+                <option value="Oceania" id="oceania" style="color: black">Oceania</option>
+              </select>
+              <!-- ****************** -->
+              <select name="" id="searchCountry">
+                <option value="" disabled selected hidden>Country</option>
+                <datalist name="" id="searchCountry" hidden></datalist>
+              </select>
+
+              <!-- ****************** -->
+              <select name="" id="typeOfTravel">
+                <option value="" disabled selected hidden>Type of travel</option>
+                <option value="" id="activeTravel" style="color: black">Active travel</option>
+                <option value="" id="theWholeFamily" style="color: black">The whole family</option>
+                <option value="" id="camping" style="color: black">Camping</option>
+              </select>
+              <!-- ****************** -->
+              <select name="" id="season">
+                <option value="" disabled selected hidden>Season</option>
+                <option value="" id="winter" style="color: black">Winter</option>
+                <option value="" id="spring" style="color: black">Spring</option>
+                <option value="" id="summer" style="color: black">Summer</option>
+                <option value="" id="autumn" style="color: black">Autumn</option>
+              </select>
+              <!-- ****************** -->
+            </div>
+            <!-- ************************* -->
+            <textarea name="" id="descriptionOfTravel" placeholder=" Tell us about your travel"></textarea>
+
+            <!-- ************************* -->
+            <textarea name="" id="howToGet" placeholder=" How to get there"></textarea>
+
+            <!-- ************************* -->
+            <textarea name="" id="whereToStay" placeholder=" Where to stay"></textarea>
+
+            <!-- ************************* -->
+            <div class="uploadPhoto">
+              <label for="">Upload a photo</label>
+              <input type="file" id="imageUpload" accept="Image/*" title="Image" />
+            </div>
+            <!-- ************************* -->
+            <input type="submit" value="Share the journey" id="submitFormCommunity" />
+            <!-- ************************* -->
+          </form>
+          <div id="chat"></div>
+        </div>
+        <!-- ************************* -->
+      </div>
+    </div>
+
+    <!-- ***********************JS link** -->
+    <script src="database/countries_list.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

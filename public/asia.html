@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- *****************************css*** -->
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/linkSection.css" />
+    <!-- *****************************fonts*** -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
+    <title>ASIA</title>
+  </head>
+  <body>
+    <!-- *****************************VideoConteiner*** -->
+
+    <div class="videoConteiner">
+      <video autoplay muted loop>
+        <source src="video/Asia.mp4" type="video/mp4" />
+        Your browser does not support video
+      </video>
+    </div>
+    <!-- *****************************siteConteiner*** -->
+    <div id="siteConteiner">
+      <!-- *****************************burger & nav bar*** -->
+      <header id="header">
+        <div class="burger">
+          <span></span>
+        </div>
+        <!-- ******************************** -->
+        <div class="logo"><img src="img/logo/logo_sW.png" alt="Logo" /></div>
+        <nav id="navMenu">
+          <a class="button" href="index.html">Home</a>
+          <a class="button" href="community.html">Community</a>
+
+          <select id="language">
+            <option id="english" style="color: black">English</option>
+            <option id="hebrew" style="color: black">Hebrew</option>
+          </select>
+        </nav>
+        <a href="account.html" id="account"><img src="img/Account.png" alt="AccountImg" />Account</a>
+      </header>
+      <!-- *****************************socialbar*** -->
+      <div class="social">
+        <h4 class="flipTexst">Follow us</h4>
+        <a class="button" href="https://www.facebook.com/" target="_blank"><img src="img/social/facebook.png" alt="facebook" /></a>
+        <a class="button" href="https://web.telegram.org/" target="_blank"><img src="img/social/telegram.png" alt="telegram" /></a>
+        <a class="button" href="https://www.youtube.com/" target="_blank"><img src="img/social/youtube.png" alt="YouTube" /></a>
+      </div>
+      <!-- *****************************scrollBar*** -->
+      <div id="progressBarContainer">
+        <div id="progressBar"></div>
+      </div>
+      <!-- *****************************linkSection*** -->
+      <div id="linkSection">
+        <div class="headerDiv">
+          <h2>ASIA</h2>
+          <a href="#contentSection" class="scrollDown">scroll down <img src="img/scroll down.png" alt="hetz" /></a>
+        </div>
+      </div>
+      <!-- *******************************contentSection* -->
+      <div id="contentSection">
+        <div id="contentBox">
+          <!-- *******************************filterForm* -->
+          <div id="filterSelect">
+            <select name="" id="continent" onchange="navigate()">
+              <option value="asia.html" id="asia" style="color: black">Asia</option>
+              <option value="africa.html" id="africa" style="color: black">Africa</option>
+              <option value="americas.html" id="northAmerica" style="color: black">Americas</option>
+              <option value="europe.html" id="europe" style="color: black">Europe</option>
+              <option value="oceania.html" id="southAmerica" style="color: black">Oceania</option>
+            </select>
+            <!-- ****************** -->
+            <select name="" id="ccountry">
+              <option value="">Country</option>
+            </select>
+            <!-- ****************** -->
+            <select name="" id="typeOfTravel">
+              <option value="" disabled selected hidden>Type of travel</option>
+              <option value="" id="activeTravel" style="color: black">Active travel</option>
+              <option value="" id="theWholeFamily" style="color: black">The whole family</option>
+              <option value="" id="camping" style="color: black">Camping</option>
+            </select>
+            <!-- ****************** -->
+            <select name="" id="season">
+              <option value="" disabled selected hidden>Season</option>
+              <option value="" id="winter" style="color: black">Winter</option>
+              <option value="" id="spring" style="color: black">Spring</option>
+              <option value="" id="summer" style="color: black">Summer</option>
+              <option value="" id="autumn" style="color: black">Autumn</option>
+            </select>
+
+            <!-- ****************** -->
+          </div>
+          <!-- *******************************cardBox* -->
+          <div id="cardBox">
+            <!-- *******************************tripCard* -->
+
+            <a class="button" href="#">
+              <img src="img/imgFromDB.jpg" alt="Img" />
+              <h5>Name from DB</h5>
+            </a>
+
+            <a class="button" href="#">
+              <img src="img/imgFromDB.jpg" alt="Img" />
+              <h5>Name from DB</h5>
+            </a>
+
+            <a class="button" href="#">
+              <img src="img/imgFromDB.jpg" alt="Img" />
+              <h5>Name from DB</h5>
+            </a>
+            <!-- ******************************** -->
+          </div>
+          <!-- ******************************** -->
+        </div>
+        <!-- ******************************** -->
+      </div>
+      <!-- ******************************** -->
+    </div>
+    <!-- ***********************JS link** -->
+    <script src="js/index.js"></script>
+  </body>
+</html>

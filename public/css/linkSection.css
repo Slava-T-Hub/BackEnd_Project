@@ -1,0 +1,214 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+/* *********************************************linkSection** */
+#linkSection {
+  z-index: 2;
+  max-width: 1440px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  color: white;
+  font-size: clamp(3rem, 2.4286rem + 2.8571vw, 5rem);
+  margin-bottom: 20px;
+}
+
+/* *********************************************** */
+#contentSection {
+  max-width: 1440px;
+  width: 100%;
+  height: 100vh;
+  padding-top: 80px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+#contentBox {
+  max-width: 1060px;
+  width: 100%;
+  height: 95%;
+  padding: 20px;
+  margin-left: 120px;
+  margin-right: 120px;
+  border-radius: 30px 30px 0px 0px;
+  background: linear-gradient(to top, rgb(246, 246, 246, 0.6), rgba(108, 107, 107, 0.6));
+  gap: 20px;
+}
+#filterSelect {
+  width: 100%;
+  height: 60px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 10px;
+  gap: 10px;
+  border-radius: 20px;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+#filterSelect select {
+  max-width: 200px;
+  width: 100%;
+  color: white;
+  font-size: clamp(1rem, 0.9429rem + 0.2857vw, 1.2rem);
+  background: none;
+  border: 0.5px solid rgb(246, 246, 246, 0.6);
+}
+/* ******************************************Card*** */
+
+#cardBox {
+  width: 100%;
+  background: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+#cardBox a {
+  max-width: 320px;
+  width: auto;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  font-style: normal;
+  transition: all 0.2s ease;
+}
+#cardBox img {
+  border-radius: 10px;
+}
+#cardBox h5 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: clamp(1rem, 0.7727rem + 1.1364vw, 1.5rem);
+  color: white;
+}
+
+#cardBox a:hover {
+  padding: 0;
+  background: rgb(246, 246, 246, 0.6);
+}
+
+/* *************************************************** */
+/* *************************************************** */
+/* *************************************************** */
+/* **************************************media 1023px* */
+@media (max-width: 1023px) {
+  #filterAfrica select {
+    margin: 0;
+  }
+  #contentSection {
+    height: auto;
+  }
+
+  #contentBox {
+    height: auto;
+    margin-left: 0px;
+    margin-right: 0px;
+    gap: 10px;
+  }
+
+  /* **************************************media 768px* */
+}
+@media (max-width: 768px) {
+  #filterSelect {
+    width: 95%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+  }
+  #filterSelect select {
+    max-width: 768px;
+    width: 100%;
+    color: white;
+    font-size: clamp(1rem, 0.9429rem + 0.2857vw, 1.2rem);
+    background: none;
+    border: 0.5px solid rgb(246, 246, 246, 0.6);
+  }
+  /* ************************************** */
+  #cardBox {
+    width: 100%;
+    background: none;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  #cardBox a {
+    max-width: 768px;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    font-style: normal;
+    transition: all 0.2s ease;
+  }
+  #cardBox img {
+    border-radius: 10px;
+  }
+  #cardBox h5 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: clamp(1rem, 0.7727rem + 1.1364vw, 1.5rem);
+    color: white;
+  }
+}
