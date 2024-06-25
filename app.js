@@ -13,9 +13,9 @@ app.use(express.static("public"));
 
 // Конфигурация подключения к базе данных
 const sqlConfig = {
-  user: "sa9",
+  user: "sa",
   password: "MyPass@word",
-  database: "TravelsDB",
+  database: "TravelDB",
   server: "localhost",
   port: 1433,
   options: {
@@ -28,12 +28,15 @@ const sqlConfig = {
 app.post("/submitForm", async (req, res) => {
   const { name, email, region, country, typeOfTravel, season, descriptionOfTravel, howToGet, whereToStay } = req.body;
 
+  console.log("Полученные данные из формы:", req.body); // Логируем полученные данные
+
   try {
     // Создание пула соединений
     const pool = await mssql.connect(sqlConfig);
+    console.log("Подключение к базе данных успешно"); // Логируем успешное подключение
 
     // Выполнение хранимой процедуры InsertTravelInfo
-    await pool
+    const result = await pool
       .request()
       .input("Name", mssql.NVarChar(100), name)
       .input("Email", mssql.NVarChar(100), email)
@@ -46,8 +49,11 @@ app.post("/submitForm", async (req, res) => {
       .input("WhereToStay", mssql.NVarChar(mssql.MAX), whereToStay)
       .execute("InsertTravelInfo");
 
+    console.log("Результат выполнения хранимой процедуры:", result); // Логируем результат выполнения
+
     // Закрытие пула соединений
     await pool.close();
+    console.log("Соединение закрыто"); // Логируем закрытие соединения
 
     // Отправка ответа клиенту
     res.status(200).send("Data inserted successfully!");
