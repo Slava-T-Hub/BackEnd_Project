@@ -91,19 +91,19 @@
           </p>
           <!-- ************************chatform* -->
 
-          <form action="" id="chatForm">
+          <form action="/submitForm" id="chatForm" method="post">
             <!-- ************************* -->
 
             <label for="">Tell us about your journey!</label>
             <!-- ************************* -->
 
             <div class="accountNameEmail">
-              <input type="text" name="" id="nameCommunity" placeholder="   Name" />
-              <input type="email" name="" id="emailCommunity" placeholder="   Email" />
+              <input type="text" name="name" id="nameCommunity" placeholder="   Name" />
+              <input type="email" name="email" id="emailCommunity" placeholder="   Email" />
             </div>
             <!-- ************************filter* -->
             <div class="filter">
-              <select name="" id="region" onchange="regionChoise()">
+              <select name="region" id="region" onchange="regionChoise()">
                 <option value="" style="color: black" disabled selected hidden>Region</option>
                 <option value="Africa" id="africa" style="color: black">Africa</option>
                 <option value="Asia" id="asia" style="color: black">Asia</option>
@@ -112,20 +112,20 @@
                 <option value="Oceania" id="oceania" style="color: black">Oceania</option>
               </select>
               <!-- ****************** -->
-              <select name="" id="searchCountry">
+              <select name="country" id="searchCountry">
                 <option value="" disabled selected hidden>Country</option>
                 <datalist name="" id="searchCountry" hidden></datalist>
               </select>
 
               <!-- ****************** -->
-              <select name="" id="typeOfTravel">
+              <select name="typeOfTravel" id="typeOfTravel">
                 <option value="" disabled selected hidden>Type of travel</option>
                 <option value="" id="activeTravel" style="color: black">Active travel</option>
                 <option value="" id="theWholeFamily" style="color: black">The whole family</option>
                 <option value="" id="camping" style="color: black">Camping</option>
               </select>
               <!-- ****************** -->
-              <select name="" id="season">
+              <select name="season" id="season">
                 <option value="" disabled selected hidden>Season</option>
                 <option value="" id="winter" style="color: black">Winter</option>
                 <option value="" id="spring" style="color: black">Spring</option>
@@ -135,19 +135,19 @@
               <!-- ****************** -->
             </div>
             <!-- ************************* -->
-            <textarea name="" id="descriptionOfTravel" placeholder=" Tell us about your travel"></textarea>
+            <textarea name="descriptionOfTravel" id="descriptionOfTravel" placeholder=" Tell us about your travel"></textarea>
 
             <!-- ************************* -->
-            <textarea name="" id="howToGet" placeholder=" How to get there"></textarea>
+            <textarea name="howToGet" id="howToGet" placeholder=" How to get there"></textarea>
 
             <!-- ************************* -->
-            <textarea name="" id="whereToStay" placeholder=" Where to stay"></textarea>
+            <textarea name="whereToStay" id="whereToStay" placeholder=" Where to stay"></textarea>
 
             <!-- ************************* -->
-            <div class="uploadPhoto">
-              <label for="">Upload a photo</label>
-              <input type="file" id="imageUpload" accept="Image/*" title="Image" />
-            </div>
+            <!-- <div class="uploadPhoto">
+            <label for="">Upload a photo</label>
+            <input type="file" id="imageUpload" accept="Image/*" title="Image" />
+            </div>-->
             <!-- ************************* -->
             <input type="submit" value="Share the journey" id="submitFormCommunity" />
             <!-- ************************* -->
