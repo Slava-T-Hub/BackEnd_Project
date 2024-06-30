@@ -65,7 +65,51 @@ app.get("/getAllTravelInfo", async (req, res) => {
 });
 
 //===============================================
+//===============================================
+//===============================================
+//===============================================
+app.post("/uploadTravel", async (req, res) => {
+  const { photoUrl, nameOfPlaceUp, regionUp, countryUp, typeOfTravelUp, seasonUp, descriptionUp, howToGetThereUp, whereToStayForTheNightUp } = req.body;
 
+  try {
+    const pool = await mssql.connect(sqlConfig);
+
+    const result = await pool
+      .request()
+      .input("photoUrl", mssql.NVarChar(mssql.MAX), photoUrl)
+      .input("nameOfPlaceUp", mssql.NVarChar(255), nameOfPlaceUp)
+      .input("regionUp", mssql.NVarChar(50), regionUp)
+      .input("countryUp", mssql.NVarChar(50), countryUp)
+      .input("typeOfTravelUp", mssql.NVarChar(50), typeOfTravelUp)
+      .input("seasonUp", mssql.NVarChar(50), seasonUp)
+      .input("descriptionUp", mssql.NVarChar(mssql.MAX), descriptionUp)
+      .input("howToGetThereUp", mssql.NVarChar(mssql.MAX), howToGetThereUp)
+      .input("whereToStayForTheNightUp", mssql.NVarChar(mssql.MAX), whereToStayForTheNightUp)
+      .execute("InsertUpTravelData");
+
+    await pool.close();
+
+    res.status(200).send("Data inserted successfully!");
+  } catch (err) {
+    console.error("SQL error:", err.message);
+    res.status(500).send("Error inserting data into database.");
+  }
+});
+//===============================================
+app.get("/GetUpTravelDataById", async (req, res) => {
+  try {
+    const pool = await mssql.connect(sqlConfig);
+
+    const result = await pool.request().execute("GetUpTravelDataById");
+
+    await pool.close();
+
+    res.status(200).json(result.recordset);
+  } catch (err) {
+    console.error("SQL error:", err.message);
+    res.status(500).send("Error fetching travel data from database.");
+  }
+});
 //===============================================
 
 app.listen(PORT, () => {

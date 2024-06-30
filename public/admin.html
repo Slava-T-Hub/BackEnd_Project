@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- *****************************css*** -->
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+
+    <!-- *****************************fonts*** -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
+    <title>Administrator</title>
+  </head>
+  <body>
+    <!-- *****************************VideoConteiner*** -->
+
+    <div class="videoConteiner">
+      <video autoplay muted loop>
+        <source src="video/admin.mp4" type="video/mp4" />
+        Your browser does not support video
+      </video>
+    </div>
+    <!-- *****************************siteConteiner*** -->
+    <div id="siteConteiner">
+      <!-- *****************************burger & nav bar*** -->
+      <header id="header">
+        <div class="burger">
+          <span></span>
+        </div>
+        <!-- ******************************** -->
+        <div class="logo"><img src="img/logo/logo_sW.png" alt="Logo" /></div>
+        <nav id="navMenu">
+          <a class="button" href="index.html">Home</a>
+
+          <select id="language">
+            <option id="english" style="color: black">English</option>
+            <option id="hebrew" style="color: black">Hebrew</option>
+          </select>
+        </nav>
+        <a href="account.html" id="account"><img src="img/Account.png" alt="AccountImg" />Account</a>
+      </header>
+      <!-- *****************************socialbar*** -->
+      <div class="social">
+        <h4 class="flipTexst">Follow us</h4>
+        <a class="button" href="https://www.facebook.com/" target="_blank"><img src="img/social/facebook.png" alt="facebook" /></a>
+        <a class="button" href="https://web.telegram.org/" target="_blank"><img src="img/social/telegram.png" alt="telegram" /></a>
+        <a class="button" href="https://www.youtube.com/" target="_blank"><img src="img/social/youtube.png" alt="YouTube" /></a>
+      </div>
+      <!-- *****************************scrollBar*** -->
+      <div id="progressBarContainer">
+        <div id="progressBar"></div>
+      </div>
+
+      <!-- ***************************************** -->
+      <!-- ***************************************** -->
+      <!-- ***************************************** -->
+      <!-- ***************************************** -->
+      <!-- ***************************************** -->
+      <!-- ***************************************** -->
+      <!-- ******************************adminPage** -->
+      <div id="adminPage">
+        <form action="/uploadTravel" method="post" id="adminForm">
+          <!-- ********************************img* -->
+
+          <input type="text" name="photoUrl" id="photoUp" placeholder="   Upload Url to photo" />
+
+          <!-- ************************nameOfPlace* -->
+
+          <input type="text" name="nameOfPlaceUp" id="nameOfPlace" placeholder="   Name Of Place" />
+
+          <!-- ************************filter* -->
+          <div class="filter">
+            <select name="regionUp" id="region" onchange="regionChoise()">
+              <option value="" style="color: black" disabled selected hidden>Region</option>
+              <option value="Africa" id="africa" style="color: black">Africa</option>
+              <option value="Asia" id="asia" style="color: black">Asia</option>
+              <option value="Europe" id="europe" style="color: black">Europe</option>
+              <option value="Americas" id="northAmerica" style="color: black">Americas</option>
+              <option value="Oceania" id="oceania" style="color: black">Oceania</option>
+            </select>
+            <!-- ****************** -->
+            <select name="countryUp" id="searchCountry">
+              <option value="" disabled selected hidden>Country</option>
+              <datalist name="" id="searchCountry" hidden></datalist>
+            </select>
+
+            <!-- ****************** -->
+            <select name="typeOfTravelUp" id="typeOfTravel">
+              <option value="" disabled selected hidden>Type of travel</option>
+              <option value="Active Travel" id="activeTravel" style="color: black">Active travel</option>
+              <option value="The whole family" id="theWholeFamily" style="color: black">The whole family</option>
+              <option value="Camping" id="camping" style="color: black">Camping</option>
+            </select>
+            <!-- ****************** -->
+            <select name="seasonUp" id="season">
+              <option value="" disabled selected hidden>Season</option>
+              <option value="Winter" id="winter" style="color: black">Winter</option>
+              <option value="Spring" id="spring" style="color: black">Spring</option>
+              <option value="Summer" id="summer" style="color: black">Summer</option>
+              <option value="Autumn" id="autumn" style="color: black">Autumn</option>
+            </select>
+          </div>
+          <!-- ************************* -->
+          <textarea name="descriptionUp" id="descriptionUp" placeholder=" Description"></textarea>
+
+          <!-- ************************* -->
+          <textarea name="howToGetThereUp" id="howToGetThere" placeholder=" How to get there"></textarea>
+
+          <!-- ************************* -->
+          <textarea name="whereToStayForTheNightUp" id="whereToStayForTheNight" placeholder=" Where to stay for the night"></textarea>
+
+          <!-- ****************** -->
+          <input type="submit" value="Upload Travels" id="uploadTravels" />
+          <!-- ****************** -->
+        </form>
+        <!-- ****************************************************************allTravels** -->
+        <div id="allTravels"></div>
+        <!-- ****************** -->
+      </div>
+      <!-- *****************************jsconect*** -->
+    </div>
+    <script src="database/countries_list.js"></script>
+    <script src="js/index.js"></script>
+    <!-- Закрытие siteConteiner -->
+  </body>
+</html>

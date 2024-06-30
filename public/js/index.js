@@ -85,4 +85,45 @@ fetch("/getAllTravelInfo")
     console.error("Error fetching travel data:", error);
   });
 
-// *******************************************get********
+// *******************************************getAdmin********
+
+async function fetchTravelData() {
+  try {
+    const response = await fetch("/GetUpTravelDataById");
+    if (!response.ok) {
+      throw new Error("Failed to fetch travel data");
+    }
+    const travels = await response.json();
+
+    const allTravelsDiv = document.getElementById("allTravels");
+    allTravelsDiv.innerHTML = "";
+
+    travels.forEach((travel) => {
+      const travelHTML = `<div id="cardBox">
+
+              <a class="button" href="#">
+              <img src="${travel.photoUrl}" alt="${travel.nameOfPlaceUp}" />
+              <h5>${travel.nameOfPlaceUp}</h5>
+              </a>
+              </div>`;
+      allTravelsDiv.innerHTML += travelHTML;
+    });
+  } catch (error) {
+    console.error("Error fetching travel data:", error);
+  }
+}
+
+fetchTravelData();
+
+/*<div class="travel-item">
+            <h2>${travel.nameOfPlaceUp}</h2>
+            <p><strong>Region:</strong> ${travel.regionUp}</p>
+            <p><strong>Country:</strong> ${travel.countryUp}</p>
+            <p><strong>Type of Travel:</strong> ${travel.typeOfTravelUp}</p>
+            <p><strong>Season:</strong> ${travel.seasonUp}</p>
+            <p><strong>Description:</strong> ${travel.descriptionUp}</p>
+            <p><strong>How to Get There:</strong> ${travel.howToGetThereUp}</p>
+            <p><strong>Where to Stay:</strong> ${travel.whereToStayForTheNightUp}</p>
+            <p><strong>Travel Date:</strong> ${travel.UpTravelDate}</p>
+            <img src="${travel.photoUrl}" alt="${travel.nameOfPlaceUp}" />
+          </div>*/
