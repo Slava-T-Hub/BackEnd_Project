@@ -58,3 +58,31 @@ function regionChoise() {
   }
   document.querySelector("#searchCountry").innerHTML = nameStr;
 }
+// *******************************************get********
+fetch("/getAllTravelInfo")
+  .then((response) => response.json())
+  .then((data) => {
+    const travelInfoContainer = document.getElementById("chat");
+
+    data.forEach((travel) => {
+      const travelElement = document.createElement("div");
+
+      travelElement.innerHTML = `<div class="userPost">
+    <p><strong>Name: </strong>${travel.Name}</p>
+    <p><strong>Region: </strong> ${travel.Region}</p>
+    <p><strong>Country: </strong> ${travel.Country}</p>
+    <p><strong>Type of Travel: </strong> ${travel.TypeOfTravel}</p>
+    <p><strong>Season: </strong> ${travel.Season}</p><hr>
+    <p><strong>Description: </strong><br> ${travel.DescriptionOfTravel}</p><hr>
+    <p><strong>How to get: </strong><br> ${travel.HowToGet}</p><hr>
+    <p><strong>Where to stay: </strong><br> ${travel.WhereToStay}</p><hr>                   
+    </div>
+    `;
+      travelInfoContainer.appendChild(travelElement);
+    });
+  })
+  .catch((error) => {
+    console.error("Error fetching travel data:", error);
+  });
+
+// *******************************************get********

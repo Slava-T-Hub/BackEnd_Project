@@ -208,3 +208,34 @@ label {
 #submitFormCommunity:active {
   background: rgba(0, 0, 0, 0.6);
 }
+/* **********************************************chatForm* */
+#chat {
+  width: 100%;
+  height: auto;
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.userPost {
+  width: 100%;
+  height: auto;
+  padding: 30px;
+  background: rgba(240, 237, 237, 0.4);
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.userPost:hover {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 35px;
+}
+
+.userPost > p {
+  font-size: clamp(1rem, 0.9429rem + 0.2857vw, 1.2rem);
+}
